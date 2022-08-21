@@ -46,7 +46,7 @@ python test.py --load_dir timefolder_in_info     # e.g. python test.py --load_di
 ```
 
 ## Log file
-We provide training log files for tracing and validation, you may need to install [tensorboard](https://www.tensorflow.org/tensorboard/get_started) first, any version should be fine.
+We provide training log files for tracing and validation, you may need to install [tensorboard](https://www.tensorflow.org/tensorboard/get_started) first, any version should be fine. ```20220531_142345``` stores the *ours* version in Table 4, while ```20220718_150016``` stores the *ours_{cd}* version.
 ```
 cd info/timefolder_in_info/log/
 tensorboard --logdir=./
