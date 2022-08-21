@@ -1,0 +1,661 @@
+python setup.py install
+running install
+running bdist_egg
+running egg_info
+creating pointnet2.egg-info
+writing pointnet2.egg-info/PKG-INFO
+writing dependency_links to pointnet2.egg-info/dependency_links.txt
+writing top-level names to pointnet2.egg-info/top_level.txt
+writing manifest file 'pointnet2.egg-info/SOURCES.txt'
+reading manifest file 'pointnet2.egg-info/SOURCES.txt'
+writing manifest file 'pointnet2.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-x86_64/egg
+running install_lib
+running build_ext
+building 'pointnet2_cuda' extension
+creating /home/wuhang/3dvision/c03_code/pn2/build
+creating /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7
+creating /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src
+Emitting ninja build file /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/build.ninja...
+Compiling objects...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/9] c++ -MMD -MF /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/group_points.o.d -pthread -B /home/wuhang/anaconda3/envs/py3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/TH -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.1/include -I/home/wuhang/anaconda3/envs/py3/include/python3.7m -c -c /home/wuhang/3dvision/c03_code/pn2/src/group_points.cpp -o /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/group_points.o -g -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=pointnet2_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14
+FAILED: /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/group_points.o 
+c++ -MMD -MF /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/group_points.o.d -pthread -B /home/wuhang/anaconda3/envs/py3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/TH -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.1/include -I/home/wuhang/anaconda3/envs/py3/include/python3.7m -c -c /home/wuhang/3dvision/c03_code/pn2/src/group_points.cpp -o /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/group_points.o -g -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=pointnet2_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Parallel.h:140,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/TH/THTensorApply.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/TH/THTensor.h:5,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/THC/THCTensor.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/THC/THC.h:12,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/group_points.cpp:5:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ParallelOpenMP.h:83: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+   83 | #pragma omp parallel for if ((end - begin) >= grain_size)
+      | 
+/home/wuhang/3dvision/c03_code/pn2/src/group_points.cpp: In function ‘int group_points_grad_wrapper_fast(int, int, int, int, int, at::Tensor, at::Tensor, at::Tensor)’:
+/home/wuhang/3dvision/c03_code/pn2/src/group_points.cpp:14:57: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   14 |     float *grad_points = grad_points_tensor.data<float>();
+      |                                                         ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/group_points.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/group_points.cpp:15:43: warning: ‘T* at::Tensor::data() const [with T = int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   15 |     const int *idx = idx_tensor.data<int>();
+      |                                           ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/group_points.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/group_points.cpp:16:57: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   16 |     const float *grad_out = grad_out_tensor.data<float>();
+      |                                                         ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/group_points.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/group_points.cpp:18:27: error: ‘THCState_getCurrentStream’ was not declared in this scope
+   18 |     cudaStream_t stream = THCState_getCurrentStream(state);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/wuhang/3dvision/c03_code/pn2/src/group_points.cpp: In function ‘int group_points_wrapper_fast(int, int, int, int, int, at::Tensor, at::Tensor, at::Tensor)’:
+/home/wuhang/3dvision/c03_code/pn2/src/group_points.cpp:28:53: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   28 |     const float *points = points_tensor.data<float>();
+      |                                                     ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/group_points.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/group_points.cpp:29:43: warning: ‘T* at::Tensor::data() const [with T = int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   29 |     const int *idx = idx_tensor.data<int>();
+      |                                           ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/group_points.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/group_points.cpp:30:41: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   30 |     float *out = out_tensor.data<float>();
+      |                                         ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/group_points.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/group_points.cpp:32:27: error: ‘THCState_getCurrentStream’ was not declared in this scope
+   32 |     cudaStream_t stream = THCState_getCurrentStream(state);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+[2/9] c++ -MMD -MF /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/interpolate.o.d -pthread -B /home/wuhang/anaconda3/envs/py3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/TH -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.1/include -I/home/wuhang/anaconda3/envs/py3/include/python3.7m -c -c /home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp -o /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/interpolate.o -g -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=pointnet2_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14
+FAILED: /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/interpolate.o 
+c++ -MMD -MF /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/interpolate.o.d -pthread -B /home/wuhang/anaconda3/envs/py3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/TH -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.1/include -I/home/wuhang/anaconda3/envs/py3/include/python3.7m -c -c /home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp -o /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/interpolate.o -g -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=pointnet2_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Parallel.h:140,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/TH/THTensorApply.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/TH/THTensor.h:5,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/THC/THCTensor.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/THC/THC.h:12,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:3:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ParallelOpenMP.h:83: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+   83 | #pragma omp parallel for if ((end - begin) >= grain_size)
+      | 
+/home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp: In function ‘void three_nn_wrapper_fast(int, int, int, at::Tensor, at::Tensor, at::Tensor, at::Tensor)’:
+/home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:16:55: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   16 |     const float *unknown = unknown_tensor.data<float>();
+      |                                                       ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:17:51: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   17 |     const float *known = known_tensor.data<float>();
+      |                                                   ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:18:45: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   18 |     float *dist2 = dist2_tensor.data<float>();
+      |                                             ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:19:37: warning: ‘T* at::Tensor::data() const [with T = int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   19 |     int *idx = idx_tensor.data<int>();
+      |                                     ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:21:27: error: ‘THCState_getCurrentStream’ was not declared in this scope
+   21 |     cudaStream_t stream = THCState_getCurrentStream(state);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp: In function ‘void three_interpolate_wrapper_fast(int, int, int, int, at::Tensor, at::Tensor, at::Tensor, at::Tensor)’:
+/home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:32:53: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   32 |     const float *points = points_tensor.data<float>();
+      |                                                     ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:33:53: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   33 |     const float *weight = weight_tensor.data<float>();
+      |                                                     ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:34:41: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   34 |     float *out = out_tensor.data<float>();
+      |                                         ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:35:43: warning: ‘T* at::Tensor::data() const [with T = int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   35 |     const int *idx = idx_tensor.data<int>();
+      |                                           ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:37:27: error: ‘THCState_getCurrentStream’ was not declared in this scope
+   37 |     cudaStream_t stream = THCState_getCurrentStream(state);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp: In function ‘void three_interpolate_grad_wrapper_fast(int, int, int, int, at::Tensor, at::Tensor, at::Tensor, at::Tensor)’:
+/home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:47:57: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   47 |     const float *grad_out = grad_out_tensor.data<float>();
+      |                                                         ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:48:53: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   48 |     const float *weight = weight_tensor.data<float>();
+      |                                                     ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:49:57: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   49 |     float *grad_points = grad_points_tensor.data<float>();
+      |                                                         ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:50:43: warning: ‘T* at::Tensor::data() const [with T = int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   50 |     const int *idx = idx_tensor.data<int>();
+      |                                           ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/interpolate.cpp:52:27: error: ‘THCState_getCurrentStream’ was not declared in this scope
+   52 |     cudaStream_t stream = THCState_getCurrentStream(state);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+[3/9] c++ -MMD -MF /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/ball_query.o.d -pthread -B /home/wuhang/anaconda3/envs/py3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/TH -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.1/include -I/home/wuhang/anaconda3/envs/py3/include/python3.7m -c -c /home/wuhang/3dvision/c03_code/pn2/src/ball_query.cpp -o /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/ball_query.o -g -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=pointnet2_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14
+FAILED: /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/ball_query.o 
+c++ -MMD -MF /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/ball_query.o.d -pthread -B /home/wuhang/anaconda3/envs/py3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/TH -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.1/include -I/home/wuhang/anaconda3/envs/py3/include/python3.7m -c -c /home/wuhang/3dvision/c03_code/pn2/src/ball_query.cpp -o /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/ball_query.o -g -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=pointnet2_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Parallel.h:140,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/TH/THTensorApply.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/TH/THTensor.h:5,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/THC/THCTensor.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/THC/THC.h:12,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/ball_query.cpp:3:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ParallelOpenMP.h:83: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+   83 | #pragma omp parallel for if ((end - begin) >= grain_size)
+      | 
+/home/wuhang/3dvision/c03_code/pn2/src/ball_query.cpp: In function ‘int ball_query_wrapper_fast(int, int, int, float, int, at::Tensor, at::Tensor, at::Tensor)’:
+/home/wuhang/3dvision/c03_code/pn2/src/ball_query.cpp:10:39: warning: ‘at::DeprecatedTypeProperties& at::Tensor::type() const’ is deprecated: Tensor.type() is deprecated. Instead use Tensor.options(), which in many cases (e.g. in a constructor) is a drop-in replacement. If you were using data from type(), that is now available from Tensor itself, so instead of tensor.type().scalar_type(), use tensor.scalar_type() instead and instead of tensor.type().backend() use tensor.device(). [-Wdeprecated-declarations]
+   10 | #define CHECK_CUDA(x) AT_CHECK(x.type().is_cuda(), #x, " must be a CUDAtensor ")
+      |                                       ^
+/home/wuhang/3dvision/c03_code/pn2/src/ball_query.cpp:12:24: note: in expansion of macro ‘CHECK_CUDA’
+   12 | #define CHECK_INPUT(x) CHECK_CUDA(x);CHECK_CONTIGUOUS(x)
+      |                        ^~~~~~~~~~
+/home/wuhang/3dvision/c03_code/pn2/src/ball_query.cpp:16:5: note: in expansion of macro ‘CHECK_INPUT’
+   16 |     CHECK_INPUT(new_xyz_tensor);
+      |     ^~~~~~~~~~~
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/ball_query.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:303:30: note: declared here
+  303 |   DeprecatedTypeProperties & type() const {
+      |                              ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/ball_query.cpp:10:23: error: ‘AT_CHECK’ was not declared in this scope; did you mean ‘DCHECK’?
+   10 | #define CHECK_CUDA(x) AT_CHECK(x.type().is_cuda(), #x, " must be a CUDAtensor ")
+      |                       ^~~~~~~~
+/home/wuhang/3dvision/c03_code/pn2/src/ball_query.cpp:10:23: note: in definition of macro ‘CHECK_CUDA’
+   10 | #define CHECK_CUDA(x) AT_CHECK(x.type().is_cuda(), #x, " must be a CUDAtensor ")
+      |                       ^~~~~~~~
+/home/wuhang/3dvision/c03_code/pn2/src/ball_query.cpp:16:5: note: in expansion of macro ‘CHECK_INPUT’
+   16 |     CHECK_INPUT(new_xyz_tensor);
+      |     ^~~~~~~~~~~
+/home/wuhang/3dvision/c03_code/pn2/src/ball_query.cpp:10:39: warning: ‘at::DeprecatedTypeProperties& at::Tensor::type() const’ is deprecated: Tensor.type() is deprecated. Instead use Tensor.options(), which in many cases (e.g. in a constructor) is a drop-in replacement. If you were using data from type(), that is now available from Tensor itself, so instead of tensor.type().scalar_type(), use tensor.scalar_type() instead and instead of tensor.type().backend() use tensor.device(). [-Wdeprecated-declarations]
+   10 | #define CHECK_CUDA(x) AT_CHECK(x.type().is_cuda(), #x, " must be a CUDAtensor ")
+      |                                       ^
+/home/wuhang/3dvision/c03_code/pn2/src/ball_query.cpp:12:24: note: in expansion of macro ‘CHECK_CUDA’
+   12 | #define CHECK_INPUT(x) CHECK_CUDA(x);CHECK_CONTIGUOUS(x)
+      |                        ^~~~~~~~~~
+/home/wuhang/3dvision/c03_code/pn2/src/ball_query.cpp:17:5: note: in expansion of macro ‘CHECK_INPUT’
+   17 |     CHECK_INPUT(xyz_tensor);
+      |     ^~~~~~~~~~~
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/ball_query.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:303:30: note: declared here
+  303 |   DeprecatedTypeProperties & type() const {
+      |                              ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/ball_query.cpp:18:55: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   18 |     const float *new_xyz = new_xyz_tensor.data<float>();
+      |                                                       ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/ball_query.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/ball_query.cpp:19:47: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   19 |     const float *xyz = xyz_tensor.data<float>();
+      |                                               ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/ball_query.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/ball_query.cpp:20:37: warning: ‘T* at::Tensor::data() const [with T = int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   20 |     int *idx = idx_tensor.data<int>();
+      |                                     ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/ball_query.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/ball_query.cpp:22:27: error: ‘THCState_getCurrentStream’ was not declared in this scope
+   22 |     cudaStream_t stream = THCState_getCurrentStream(state);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+[4/9] c++ -MMD -MF /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/sampling.o.d -pthread -B /home/wuhang/anaconda3/envs/py3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/TH -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.1/include -I/home/wuhang/anaconda3/envs/py3/include/python3.7m -c -c /home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp -o /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/sampling.o -g -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=pointnet2_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14
+FAILED: /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/sampling.o 
+c++ -MMD -MF /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/sampling.o.d -pthread -B /home/wuhang/anaconda3/envs/py3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/TH -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.1/include -I/home/wuhang/anaconda3/envs/py3/include/python3.7m -c -c /home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp -o /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/sampling.o -g -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=pointnet2_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Parallel.h:140,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/TH/THTensorApply.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/TH/THTensor.h:5,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/THC/THCTensor.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/THC/THC.h:12,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp:4:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ParallelOpenMP.h:83: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+   83 | #pragma omp parallel for if ((end - begin) >= grain_size)
+      | 
+/home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp: In function ‘int gather_points_wrapper_fast(int, int, int, int, at::Tensor, at::Tensor, at::Tensor)’:
+/home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp:13:53: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   13 |     const float *points = points_tensor.data<float>();
+      |                                                     ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp:14:43: warning: ‘T* at::Tensor::data() const [with T = int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   14 |     const int *idx = idx_tensor.data<int>();
+      |                                           ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp:15:41: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   15 |     float *out = out_tensor.data<float>();
+      |                                         ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp:17:27: error: ‘THCState_getCurrentStream’ was not declared in this scope
+   17 |     cudaStream_t stream = THCState_getCurrentStream(state);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp: In function ‘int gather_points_grad_wrapper_fast(int, int, int, int, at::Tensor, at::Tensor, at::Tensor)’:
+/home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp:26:57: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   26 |     const float *grad_out = grad_out_tensor.data<float>();
+      |                                                         ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp:27:43: warning: ‘T* at::Tensor::data() const [with T = int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   27 |     const int *idx = idx_tensor.data<int>();
+      |                                           ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp:28:57: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   28 |     float *grad_points = grad_points_tensor.data<float>();
+      |                                                         ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp:30:27: error: ‘THCState_getCurrentStream’ was not declared in this scope
+   30 |     cudaStream_t stream = THCState_getCurrentStream(state);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp: In function ‘int furthest_point_sampling_wrapper(int, int, int, at::Tensor, at::Tensor, at::Tensor)’:
+/home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp:39:53: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   39 |     const float *points = points_tensor.data<float>();
+      |                                                     ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp:40:43: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   40 |     float *temp = temp_tensor.data<float>();
+      |                                           ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp:41:37: warning: ‘T* at::Tensor::data() const [with T = int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   41 |     int *idx = idx_tensor.data<int>();
+      |                                     ^
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/input-archive.h:6,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/archive.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/serialize/tensor.h:3,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp:1:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:7: note: declared here
+  395 |   T * data() const {
+      |       ^~~~
+/home/wuhang/3dvision/c03_code/pn2/src/sampling.cpp:43:27: error: ‘THCState_getCurrentStream’ was not declared in this scope
+   43 |     cudaStream_t stream = THCState_getCurrentStream(state);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+[5/9] /usr/local/cuda-11.1/bin/nvcc --generate-dependencies-with-compile --dependency-output /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/group_points_gpu.o.d -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/TH -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.1/include -I/home/wuhang/anaconda3/envs/py3/include/python3.7m -c -c /home/wuhang/3dvision/c03_code/pn2/src/group_points_gpu.cu -o /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/group_points_gpu.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -O2 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=pointnet2_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_86,code=compute_86 -gencode=arch=compute_86,code=sm_86 -std=c++14
+[6/9] /usr/local/cuda-11.1/bin/nvcc --generate-dependencies-with-compile --dependency-output /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/interpolate_gpu.o.d -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/TH -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.1/include -I/home/wuhang/anaconda3/envs/py3/include/python3.7m -c -c /home/wuhang/3dvision/c03_code/pn2/src/interpolate_gpu.cu -o /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/interpolate_gpu.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -O2 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=pointnet2_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_86,code=compute_86 -gencode=arch=compute_86,code=sm_86 -std=c++14
+[7/9] /usr/local/cuda-11.1/bin/nvcc --generate-dependencies-with-compile --dependency-output /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/ball_query_gpu.o.d -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/TH -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.1/include -I/home/wuhang/anaconda3/envs/py3/include/python3.7m -c -c /home/wuhang/3dvision/c03_code/pn2/src/ball_query_gpu.cu -o /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/ball_query_gpu.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -O2 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=pointnet2_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_86,code=compute_86 -gencode=arch=compute_86,code=sm_86 -std=c++14
+[8/9] /usr/local/cuda-11.1/bin/nvcc --generate-dependencies-with-compile --dependency-output /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/sampling_gpu.o.d -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/TH -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.1/include -I/home/wuhang/anaconda3/envs/py3/include/python3.7m -c -c /home/wuhang/3dvision/c03_code/pn2/src/sampling_gpu.cu -o /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/sampling_gpu.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -O2 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=pointnet2_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_86,code=compute_86 -gencode=arch=compute_86,code=sm_86 -std=c++14
+[9/9] c++ -MMD -MF /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/pointnet2_api.o.d -pthread -B /home/wuhang/anaconda3/envs/py3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/TH -I/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.1/include -I/home/wuhang/anaconda3/envs/py3/include/python3.7m -c -c /home/wuhang/3dvision/c03_code/pn2/src/pointnet2_api.cpp -o /home/wuhang/3dvision/c03_code/pn2/build/temp.linux-x86_64-3.7/src/pointnet2_api.o -g -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=pointnet2_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+In file included from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/Parallel.h:140,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/utils.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/cloneable.h:5,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn.h:3,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/all.h:13,
+                 from /home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/torch/extension.h:4,
+                 from /home/wuhang/3dvision/c03_code/pn2/src/pointnet2_api.cpp:2:
+/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/include/ATen/ParallelOpenMP.h:83: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+   83 | #pragma omp parallel for if ((end - begin) >= grain_size)
+      | 
+ninja: build stopped: subcommand failed.
+Traceback (most recent call last):
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/utils/cpp_extension.py", line 1673, in _run_ninja_build
+    env=env)
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/subprocess.py", line 512, in run
+    output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['ninja', '-v']' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "setup.py", line 22, in <module>
+    cmdclass={'build_ext': BuildExtension}
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/setuptools/__init__.py", line 153, in setup
+    return distutils.core.setup(**attrs)
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/distutils/core.py", line 148, in setup
+    dist.run_commands()
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/distutils/dist.py", line 966, in run_commands
+    self.run_command(cmd)
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/distutils/dist.py", line 985, in run_command
+    cmd_obj.run()
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/setuptools/command/install.py", line 67, in run
+    self.do_egg_install()
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/setuptools/command/install.py", line 109, in do_egg_install
+    self.run_command('bdist_egg')
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/distutils/cmd.py", line 313, in run_command
+    self.distribution.run_command(command)
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/distutils/dist.py", line 985, in run_command
+    cmd_obj.run()
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/setuptools/command/bdist_egg.py", line 164, in run
+    cmd = self.call_command('install_lib', warn_dir=0)
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/setuptools/command/bdist_egg.py", line 150, in call_command
+    self.run_command(cmdname)
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/distutils/cmd.py", line 313, in run_command
+    self.distribution.run_command(command)
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/distutils/dist.py", line 985, in run_command
+    cmd_obj.run()
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/setuptools/command/install_lib.py", line 11, in run
+    self.build()
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/distutils/command/install_lib.py", line 107, in build
+    self.run_command('build_ext')
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/distutils/cmd.py", line 313, in run_command
+    self.distribution.run_command(command)
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/distutils/dist.py", line 985, in run_command
+    cmd_obj.run()
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/setuptools/command/build_ext.py", line 79, in run
+    _build_ext.run(self)
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/distutils/command/build_ext.py", line 340, in run
+    self.build_extensions()
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/utils/cpp_extension.py", line 708, in build_extensions
+    build_ext.build_extensions(self)
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/distutils/command/build_ext.py", line 449, in build_extensions
+    self._build_extensions_serial()
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/distutils/command/build_ext.py", line 474, in _build_extensions_serial
+    self.build_extension(ext)
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/setuptools/command/build_ext.py", line 196, in build_extension
+    _build_ext.build_extension(self, ext)
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/distutils/command/build_ext.py", line 534, in build_extension
+    depends=ext.depends)
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/utils/cpp_extension.py", line 538, in unix_wrap_ninja_compile
+    with_cuda=with_cuda)
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/utils/cpp_extension.py", line 1359, in _write_ninja_file_and_compile_objects
+    error_prefix='Error compiling objects for extension')
+  File "/home/wuhang/anaconda3/envs/py3/lib/python3.7/site-packages/torch/utils/cpp_extension.py", line 1683, in _run_ninja_build
+    raise RuntimeError(message) from e
+RuntimeError: Error compiling objects for extension
+
