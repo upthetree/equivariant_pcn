@@ -1,6 +1,4 @@
-# equivariant_pcn
-
-Source code of *SO(3) Rotation Equivariant Point Cloud Completion using Attention-based Vector Neurons*.
+## SO(3) Rotation Equivariant Point Cloud Completion using Attention-based Vector Neurons
 
 ## Requirements
 ```
