@@ -27,20 +27,30 @@ Download the [MVP](https://github.com/paul007pl/VRCNet) dataset and put it in th
 ## Train and test
 To train a model from scratch:
 ```
-python train.py  # train with both EMD and CD
+python train.py             # train with 2 CDs
 ## or
-python train.py --use_emd False  # train with 2 CDs
+python train.py --use_emd   # train with EMD and CD
 ```
-We also provide pre-trained models, this [model](https://pan.baidu.com/s/17ILNS7-Mb8blwTbwLhQEOQ) (extraction code: d5vm) refer to *ours* in Table 4 of main paper, and this [model_{cd}](https://pan.baidu.com/s/1amz19JYSjKRWkvanCO0aIw) (extraction code: b6j5) refer to *ours_{cd}* in Table 4. Put the whole folder in ```info```. We will also try to upload pre-trained models on google drive.
+We also provide pre-trained models in ```../pretrained``` folder.
 
 To train a model using pretrained weights:
 ```
-python train.py --load_dir timefolder_in_info    # e.g. python train.py --load_dir 20220502_091211
+python train.py --load_dir timefolder_in_info
+# --use_emd same_as_train
+# e.g. python train.py --load_dir 20220502_091211 --use_emd
 ```
 
-To test the consistency and accuracy on testset of MVP:
+To test object completion accuracy on testset of MVP:
 ```
-python test.py --load_dir timefolder_in_info     # e.g. python test.py --load_dir 20220502_091211
+python test_single.py --load_dir timefolder_in_info
+# --use_emd same_as_train
+# e.g. python test_single.py --load_dir 20220502_091211 --use_emd
+```
+
+To test the consistency and accuracy on testset of MVP (Warning: This process might takes long time!):
+```
+python test.py --load_dir timefolder_in_info
+# --use_emd same_as_train
 ```
 
 ## Log file
@@ -61,3 +71,4 @@ We borrow some of code from the following inspiring repositories:
 [Pointnet2](https://github.com/sshaoshuai/Pointnet2.PyTorch), 
 [VRCNet](https://github.com/paul007pl/VRCNet), 
 [VNN](https://github.com/FlyingGiraffe/vnn).
+

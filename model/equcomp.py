@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -199,10 +198,9 @@ class VTR_decoder(nn.Module):
         ''' Feature propogation '''
         points_fp_l2 = self.fp_2(points_xyz_l2, None, tr_fts_l2, gl_fts)
         points_fp_l1 = self.fp_1(points_xyz_l1, points_xyz_l2, tr_fts_l1, points_fp_l2)
-        points_fp_l1 = points_fp_l1.unsqueeze(4).repeat(1, 1, 1, 1, 4).reshape(b, -1, 3, n*4)
-        points_fp_l1 = torch.cat([gl_fts_exp, points_fp_l1], dim=1)
         
-        cat_fts = torch.cat([grid_fts, points_fp_l1], dim=1)
+        point_fts = points_fp_l1.unsqueeze(4).repeat(1, 1, 1, 1, 4).reshape(b, -1, 3, n*4)
+        cat_fts = torch.cat([gl_fts_exp, grid_fts, point_fts], dim=1)
         if self.use_emb:
             cat_fts = torch.cat([cat_fts, coarse_fts.unsqueeze(3).repeat(1, 1, 1, n*4)], dim=1)
         

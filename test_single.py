@@ -39,10 +39,10 @@ os.makedirs(pcd_path) if not os.path.exists(pcd_path) else None
 '''Dataset'''
 if args.cat is None:
     mvp_test = dataset.MVP2('mvp_dataset', train=False, npoints=2048, novel_input=args.novel_input)
-    csv_name = os.path.join(csv_path, 'loss_all_30.csv')
+    csv_name = os.path.join(csv_path, 'loss_all.csv')
 else:
     mvp_test = dataset.MVP_cat('mvp_dataset', train=False, npoints=2048, cat=args.cat)
-    csv_name = os.path.join(csv_path, 'loss_%s_30.csv'%args.cat)
+    csv_name = os.path.join(csv_path, 'loss_%s.csv'%args.cat)
 dataloader_test = torch.utils.data.DataLoader(mvp_test, batch_size=args.batch_size, shuffle=False)
 f = open(csv_name,'w')
 writer = csv.writer(f)
@@ -74,48 +74,39 @@ for i, data in enumerate(dataloader_test):
     #     data_util.view_pcd(gt_fine[2])
     #####################
     
-    emd_all = []
-    cd_all = []
+    # emd_all = []
+    # cd_all = []
     
-    for j in range(30):
-        rot_mat = special_ortho_group.rvs(3)
-        # rot_mat_t = rot_mat.T
-        points_xyz = points_xyz_raw @ rot_mat
-        gt_coarse = gt_coarse_raw @ rot_mat
-        gt_fine = gt_fine_raw @ rot_mat
+    rot_mat = special_ortho_group.rvs(3)
+    # rot_mat_t = rot_mat.T
+    points_xyz = points_xyz_raw @ rot_mat
+    gt_coarse = gt_coarse_raw @ rot_mat
+    gt_fine = gt_fine_raw @ rot_mat
     
-        points_xyz = points_xyz.cuda().float()
-        gt_coarse = gt_coarse.cuda().float()
-        gt_fine = gt_fine.cuda().float()
-        with torch.no_grad():
-            pred_coarse, pred_fine, loss_emd, loss_cdp = MODEL(points_xyz, gt_coarse, gt_fine, istraining=False, use_emd=args.use_emd)
+    points_xyz = points_xyz.cuda().float()
+    gt_coarse = gt_coarse.cuda().float()
+    gt_fine = gt_fine.cuda().float()
+    with torch.no_grad():
+        pred_coarse, pred_fine, loss_emd, loss_cdp = MODEL(points_xyz, gt_coarse, gt_fine, istraining=False, use_emd=args.use_emd)
         
-        # pred_coarse = pred_coarse.detach().cpu().numpy()
-        # pred_fine = pred_fine.detach().cpu().numpy()
-        loss_emd = loss_emd.detach().cpu().numpy()[:, None]
-        loss_cdp = loss_cdp.detach().cpu().numpy()[:, None]
+    # pred_coarse = pred_coarse.detach().cpu().numpy()
+    # pred_fine = pred_fine.detach().cpu().numpy()
+    loss_emd = loss_emd.detach().cpu().numpy()
+    loss_cdp = loss_cdp.detach().cpu().numpy()
         
-        cd_all.append(loss_cdp)
-        emd_all.append(loss_emd)
+    # cd_all.append(loss_cdp)
+    # emd_all.append(loss_emd)
         
-        print ('%d/%d'%(i, j))
+    print ('Object: %d - %d'%(i*args.batch_size, (i+1)*args.batch_size))
     
     # pred_coarse_all.append(pred_coarse)
     # pred_fine_all.append(pred_fine)
     
-    emd_all = np.hstack(emd_all)  #(b, 30)
-    cd_all = np.hstack(cd_all)    #(b, 30)
-    
-    max_emd = np.max(emd_all, axis=1)
-    min_emd = np.min(emd_all, axis=1)
-    max_cd = np.max(cd_all, axis=1)
-    min_cd = np.min(cd_all, axis=1)
+    # emd_all = np.hstack(emd_all)  #(b, 30)
+    # cd_all = np.hstack(cd_all)    #(b, 30)
     
     for j in range(label.shape[0]):
-        writer.writerow([str(i*args.batch_size+j), '', cat_name_all[label[j]],'', 
-                         str(max_emd[j]), '', str(min_emd[j]), '',
-                         str(max_cd[j]), '', str(min_cd[j]), '',
-                         str(max_emd[j]-min_emd[j]), '', str(max_cd[j]-min_cd[j])])
+        writer.writerow([str(i*args.batch_size+j), '', cat_name_all[label[j]],'', str(loss_emd[j]), '', str(loss_cdp[j])])
     
 
 # pred_coarse_all = np.concatenate(pred_coarse_all, axis=0)

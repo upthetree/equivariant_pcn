@@ -27,7 +27,7 @@ parser.add_argument('--weight_decay', type=float, default=1e-4)
 parser.add_argument('--opt_name', default='Adam')
 parser.add_argument('--decay_type', default='step')
 parser.add_argument('--step_size', type=int, default=10)
-parser.add_argument('--use_emd', type=bool, default=True)
+parser.add_argument('--use_emd', action='store_true', default=False)
 
 ### Normal training ###
 parser.add_argument('--cat', default=None)
