@@ -31,7 +31,7 @@ python train.py             # train with 2 CDs
 ## or
 python train.py --use_emd   # train with EMD and CD
 ```
-We also provide pre-trained models in ```../pretrained``` folder.
+We also provide pre-trained models in [OneDrive](https://1drv.ms/u/s!Alw54L07Zz1ugmqM-4vRMeS8-zzf?e=5AgLPU).
 
 To train a model using pretrained weights:
 ```
